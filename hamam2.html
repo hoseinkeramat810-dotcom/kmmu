@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سامانه رزرو نوبت حمام خوابگاه</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>سامانه رزرو نوبت حمام</h1>
+    </header>
+
+    <main>
+        <section class="booking-form">
+            <h2>رزرو نوبت حمام</h2>
+            <form action="payment.html" method="GET">
+                <label>نام و نام خانوادگی:</label>
+                <input type="text" name="fullname" required>
+                
+                <label>شماره اتاق:</label>
+                <input type="number" name="room" required>
+                
+                <label>تاریخ:</label>
+                <input type="date" name="date" required>
+                
+                <label>انتخاب زمان:</label>
+                <select name="time" required>
+					<option value="7-8">7-8</option>
+                    <option value="8-9">8-9</option>
+                    <option value="9-10">9-10</option>
+                    <option value="10-11">10-11</option>
+                    <option value="11-12">11-12</option>
+                    <option value="12-13">12-13</option>
+                    <option value="13-14">13-14</option>
+                    <option value="14-15">14-15</option>
+                    <option value="15-16">15-16</option>
+                    <option value="16-17">16-17</option>
+                    <option value="17-18">17-18</option>
+                    <option value="18-19">18-19</option>
+                    <option value="19-20">19-20</option>
+                    <option value="20-21">20-21</option>
+                    <option value="21-22">21-22</option>
+                    <option value="22-23">22-23</option>
+                    <option value="23-24">23-24</option>
+                </select>
+                
+                <div class="price">
+                    <strong>هزینه: 2000 تومان</strong>
+                </div>
+                
+                <button type="submit">ثبت نوبت و پرداخت</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
