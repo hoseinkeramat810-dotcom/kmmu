@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پرداخت - سامانه رزرو نوبت</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>پرداخت هزینه نوبت</h1>
+        <nav>
+            <a href="hamam2.html">رزرو نوبت</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="payment-summary">
+            <h2>خلاصه نوبت</h2>
+            <div class="summary-details">
+                <p><strong>نام:</strong> <span id="customer-name">---</span></p>
+                <p><strong>اتاق:</strong> <span id="room-number">---</span></p>
+                <p><strong>تاریخ:</strong> <span id="booking-date">---</span></p>
+                <p><strong>زمان:</strong> <span id="booking-time">---</span></p>
+                <p><strong>هزینه:</strong> 2000 تومان</p>
+            </div>
+        </section>
+
+        <section class="payment-methods">
+            <h2>روش پرداخت</h2>
+            <div class="methods">
+                <div class="method-card" onclick="selectPayment('card')">
+                    💳 پرداخت آنلاین
+                </div>
+                <div class="method-card" onclick="selectPayment('wallet')">
+                    📱 کیف پول
+                </div>
+                <div class="method-card" onclick="selectPayment('gateway')">
+                    🏦 درگاه بانکی
+                </div>
+            </div>
+            
+            <button class="pay-btn" onclick="processPayment()">
+                پرداخت 2000 تومان
+            </button>
+        </section>
+    </main>
+
+    <script>
+        // دریافت اطلاعات از URL
+        const urlParams = new URLSearchParams(window.location.search);
+        document.getElementById('customer-name').textContent = urlParams.get('fullname') || '---';
+        document.getElementById('room-number').textContent = urlParams.get('room') || '---';
+        document.getElementById('booking-date').textContent = urlParams.get('date') || '---';
+        document.getElementById('booking-time').textContent = urlParams.get('time') || '---';
+
+        function selectPayment(method) {
+            // اضافه کردن استایل به روش انتخابی
+            document.querySelectorAll('.method-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            event.target.classList.add('selected');
+        }
+
+        function processPayment() {
+            alert('پرداخت با موفقیت انجام شد! ✅\nنوبت شما ثبت شد.');
+            // اینجا میتونی به صفحه تایید هدایت کنی
+            window.location.href = 'success.html';
+        }
+    </script>
+</body>
+</html>
